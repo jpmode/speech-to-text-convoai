@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Recorder and Text-to-Speech</title>
+</head>
+<body>
+
+    <table style="width:100%">
+        <tr>
+            <td style="width:100%">
+                <h2>Record and Upload Audio</h2>
+                <button id="record">Record</button>
+                <button id="stop" disabled>Stop</button>
+                <span id="timer">00:00</span>
+                <audio id="audio" controls></audio> 
+                <input type="hidden" name="audio_data" id="audioData">
+                <hr>
+
+                <h2>Recorded Audio Files</h2>
+                <ul>
+                    {% for file in recorded_files %}
+                    <li>
+                        <audio controls>
+                            <source src="{{ url_for('uploaded_file', filename=file) }}">
+                            Your browser does not support the audio element.
+                        </audio><br>
+                        {{ file }}
+                        <!-- <a href="{{ url_for('uploaded_file', filename=file + '.txt') }}">{{ file }}.txt</a> -->
+                        <a href="{{ url_for('uploaded_file', filename=file.replace('.wav', '.txt')) }}">{{ file.replace('.wav', '.txt') }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <form method="POST" action="/clear">
+                    <button type="submit">Clear All Recordings</button>
+                </form>                
+            </td>
+        </tr>
+    </table>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>
+
