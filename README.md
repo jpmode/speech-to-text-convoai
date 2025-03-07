@@ -2,6 +2,14 @@
 
 A Flask-based web application that enables users to record audio, replay the recorded audio, and generate a transcribed text file. The transcribed text undergoes sentiment analysis, categorizing it as positive, neutral, or negative.
 
+## Tech Stack
+- **Programming Language:** Python  
+- **Framework:** Flask  
+- **Machine Learning:** Vertex AI (Google Speech-to-Text, GenerativeModel for sentiment analysis)  
+- **Deployment (Previously Hosted):** Docker, Google Cloud Run  
+- **Cloud Storage:** Google Cloud Storage  
+- **Environment Management:** Python dotenv  
+
 ## Features
 - Record and replay user audio
 - Transcribe speech into text
