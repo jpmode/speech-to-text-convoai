@@ -1,7 +1,7 @@
 # Speech-to-Text with Sentiment Analysis
 
 A Flask-based web application that enables users to record audio, replay the recorded audio, and generate a transcribed text file. The transcribed text undergoes sentiment analysis, categorizing it as positive, neutral, or negative.
-
+> **Note:** For detailed instructions on deploying this application using Docker and Google Cloud Run, please refer to the [**Deployment Instructions**](DEPLOYMENT.md) page. 
 ## Tech Stack
 - **Programming Language:** Python  
 - **Framework:** Flask  
